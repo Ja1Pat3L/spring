@@ -1,0 +1,56 @@
+<!-- AnmolSingh-301145362 -->
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+	
+<title>Update</title>
+</head>
+<body>
+<div class="container px-5 my-5">
+	<h1 class="text-center">Upadate Details</h1></br>
+    <form id="contactForm"  th:action=@{/customer/updateCustomer} th:object="${customer}" method="post">
+        <div class="form-floating mb-3">
+            <input class="form-control" min="1" th:value="*{fcustomerid}" id="customerId" name="fcustomerid" type="number" readonly required />
+            <label for="customerId">Customer Id</label>
+        </div>
+   
+        <div class="form-floating mb-3">
+            <input class="form-control" id="firstName" th:value="*{firstname}" name="firstname" type="text" placeholder="First Name" required  />
+            <label for="firstName">First Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="lastName" th:value="*{lastname}" name="lastname" type="text" placeholder="Last Name" required  />
+            <label for="lastName">Last Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="address" th:value="*{address}" name="address" type="text" placeholder="Address" required  />
+            <label for="address">Address</label>
+
+        </div>
+     
+        <div class="form-floating mb-3">
+            <input class="form-control" id="phoneNumber" th:value="*{phone}" name="phone" type="text" placeholder="Phone Number" required  />
+            <label for="phoneNumber">Phone Number</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="emailAddress" th:value="*{emailid}" name="emailid" type="email" placeholder="Email Address" required  />
+            <label for="emailAddress">Email Address</label>
+        </div>     
+        </div>
+        <div class="row">
+       <input type="submit" value="Update" class="btn btn-primary" style="width:215px;margin-left:30%;margin-bottom:5%"></input>
+       
+
+        </div>
+    </form>
+</div>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+</body>
+</html>

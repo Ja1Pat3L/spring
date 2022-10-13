@@ -1,0 +1,45 @@
+<!-- AnmolSingh-301145362 -->
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<title>Customer-list</title>
+</head>
+<body>
+<div class="container">
+		<table class="table table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Customer Id</th>
+				<th>Customer's First Name</th>
+				<th>Customer's Last Name</th>
+				<th>Phone number</th>
+				<th>Email Id</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr th:each="customer : ${customers}">
+			<td th:text="${customer.fcustomerid}">Customer Id</td>
+			<td th:text="${customer.firstname}">Customer's First Name</td>
+			<td th:text="${customer.lastname}">Customer's Last Name</td>
+			<td th:text="${customer.phone}">Phone number</td>
+			<td th:text="${customer.emailid}">Email Id</td>
+			<td> <a th:href="@{/customer/update/{id}(id=${customer.fcustomerid})}"
+                class="btn btn-primary">Update</a></td>
+               
+			<td><a th:href="@{/customer/deleteCustomer/{id}(id=${customer.fcustomerid})}"
+                class="btn btn-danger">Delete</a></td>
+		</tr>
+		</tbody>
+		</table>
+    	<strong><a a th:href="@{/customer/showCustomers}" class="btn btn-primary" style="width:200px">Home</a></strong>
+	</div>
+</body>
+</html>

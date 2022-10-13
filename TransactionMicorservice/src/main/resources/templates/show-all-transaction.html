@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <!--
+
+  -->
+
+    <meta charset="ISO-8859-1" />
+    <title>Books</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link href="/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+  <h2 style="text-align: center;">List of Transactions</h2><br>
+    <div class="card-container">
+      <div class="row justify-content-center">
+        
+      </div>
+   
+      
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Cusomer Id</th>
+            <th>Book Id</th>
+            <th>Transaction Date</th>
+            <th>Transaction Type</th>
+                       
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="transaction : ${transactions}">
+            <td th:text="${transaction.customerid}"> Cusomer Id</td>
+            <td th:text="${transaction.bookid}">bookid</td>
+            <td th:text="${transaction.trxndate}">trxndate</td>
+            <td th:text="${transaction.trxntype}">trxntype</td>       
+            <td>            
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   
+      <div
+        class="row row-padding justify-content-center"
+        id="back-to-dashboard"
+      >
+      </div>
+    </div>
+  </body>
+</html>

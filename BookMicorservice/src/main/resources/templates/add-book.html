@@ -1,0 +1,49 @@
+<!-- AnmolSingh-301145362 -->
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+	
+<title>Add New Book</title>
+</head>
+<body>
+<div class="container px-5 my-5">
+	<h1 class="text-center">New Book</h1></br>
+    <form id="contactForm"  th:action=@{/book/registerBook} th:object="${book}" method="post">
+    
+        <div class="form-floating mb-3">
+           <label for="title">Title</label>
+            <input class="form-control" id="title" name="title" type="text" placeholder="Title" required />
+         
+        </div>
+        <div class="form-floating mb-3">
+         <label for="authorlastname">Author Last Name</label>
+            <input class="form-control" id="authorlastname" name="authorlastname" type="authorlastname" placeholder="Author's' Last Name"  required  />
+           
+        </div>
+        <div class="form-floating mb-3">
+         <label for="authorfirsname">Author First Name</label>
+            <input class="form-control" id="authorfirstname" name="authorfirstname" type="text" placeholder="Author's First Name" required  />
+           
+        </div>
+
+        <div class="form-floating mb-3">
+        <label for="raing">Rating</label>
+            <input class="form-control" id="rating" name="rating" type="number" placeholder="Rating" min=0 required />            
+        </div>
+  
+     
+        <div class="d-grid">
+        <input type="submit" value="Add Book" class="btn btn-primary" style="width:215px"></input>
+		  <input type="reset" value="Clear" class="btn btn-primary" style="width:215px"></input>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
